@@ -7,21 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background Audio -->
-    <audio controls loop>
+    <!-- Background Audio (Tanpa Controls) -->
+    <audio id="backgroundAudio" loop>
         <source src="bs.mp3" type="audio/mp3">
         Browsermu tidak mendukung tag audio, upgrade donk!
     </audio>
 
     <div id="content">
         <div id="message"></div> <!-- Tempat untuk menampilkan pesan -->
-        <button id="nextButton" style="display: none;">Lanjut</button> <!-- Tombol untuk lanjut -->
+        <button id="nextButton">Lanjut</button> <!-- Tombol untuk lanjut -->
     </div>
 
     <!-- Animasi love retak di akhir -->
     <div id="love-animation" style="display: none;">
         <div class="heart"></div>
     </div>
+
+    <script>
+        // Ambil elemen audio dan tombol
+        const audio = document.getElementById('backgroundAudio');
+        const nextButton = document.getElementById('nextButton');
+
+        // Fungsi untuk memulai audio saat tombol diklik
+        nextButton.addEventListener('click', function() {
+            audio.play(); // Memulai pemutaran audio
+            nextButton.style.display = 'none'; // Sembunyikan tombol setelah diklik
+        });
+    </script>
 
     <script src="main.js"></script>
 </body>
